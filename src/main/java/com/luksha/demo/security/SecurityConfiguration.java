@@ -14,19 +14,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-//    private final PasswordEncoder passwordEncoder;
-//
-//    @Autowired
-//    public SecurityConfiguration(PasswordEncoder passwordEncoder) {
-//        this.passwordEncoder = passwordEncoder;
-//    }
-
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("marko")
                 .password(passwordEncoder().encode("1000parathas"))
-                .roles("ADMIN");
+                .roles("USER");
     }
 
     @Override

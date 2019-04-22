@@ -1,7 +1,6 @@
 package com.luksha.demo.domain;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -12,17 +11,15 @@ import java.util.Date;
 @Data
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@RequiredArgsConstructor
 public class Paratha {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private final Long id;
+    private Long id;
 
     @NotNull
-    private final String name;
+    private String name;
 
     @CreatedDate
-    private final Date createdAt;
-
+    private Date createdAt;
 }

@@ -34,13 +34,19 @@ public class ParathaApiControllerTest {
 
     @Test
     public void getParathasApiWithoutAuthShouldReturnUnauthorized() throws Exception {
-        when(repo.findAll()).thenReturn(Arrays.asList(new Paratha(1L, "test", new Date())));
+        Paratha paratha = new Paratha();
+        paratha.setId(1L);
+        paratha.setName("test");
+        when(repo.findAll()).thenReturn(Arrays.asList(paratha));
         mockMvc.perform(get("/paratha")).andExpect(status().isUnauthorized());
     }
 
     @Test
     public void getParathasApiShouldReturnList() throws Exception {
-        when(repo.findAll()).thenReturn(Arrays.asList(new Paratha(1L, "test", new Date())));
+        Paratha paratha = new Paratha();
+        paratha.setId(1L);
+        paratha.setName("test");
+        when(repo.findAll()).thenReturn(Arrays.asList(paratha));
         mockMvc.perform(get("/paratha")
                 .with(user("marko").password("1000parathas")))
                 .andExpect(status().isOk())
