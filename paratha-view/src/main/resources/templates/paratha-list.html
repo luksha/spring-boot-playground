@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Paratha list</title>
+</head>
+<table style="border: 1px solid black;">
+    <thead>
+    <tr>
+        <th> Name </th>
+        <th> Date created </th>
+    </tr>
+    </thead>
+    <tr th:if="${parathas.empty}">
+        <td colspan="2"> No Parathas :( </td>
+    </tr>
+    <tr th:each="paratha : ${parathas}">
+        <td><span th:text="${paratha.name}"> Name </span></td>
+        <td><span th:text="${paratha.createdAt}"> Date created </span></td>
+    </tr>
+    </tbody>
+</table>
+</html>
