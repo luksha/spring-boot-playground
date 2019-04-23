@@ -1,0 +1,4 @@
+com/luksha/demo/DemoApplication.class
+com/luksha/demo/api/ParathaApiController.class
+com/luksha/demo/data/ParathaRepo.class
+com/luksha/demo/domain/Paratha.class
