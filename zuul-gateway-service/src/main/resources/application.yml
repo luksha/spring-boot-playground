@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: zuul-proxy
+
+zuul:
+  routes:
+    paratha-view:
+      serviceId: paratha-view
+  host:
+    socket-timeout-millis: 30000
